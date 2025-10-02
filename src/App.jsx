@@ -11,7 +11,6 @@ function Navbar() {
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
@@ -36,8 +35,6 @@ function Navbar() {
           </button>
         </div>
       </div>
-
-      
     </nav>
   );
 }
@@ -104,13 +101,13 @@ function HomePage() {
     {
       name: "Piaggio Grillo",
       year: "1968-1973",
-      description: "Desin unico un mix dell'iconico SI e il Ciao.",
+      description: "Design unico un mix dell'iconico SI e il Ciao.",
       color: "from-purple-500 to-pink-500"
     },
     {
       name: "Vespa 50",
       year: "1963-oggi",
-      description: "L'icona italiana per eccellenza. ",
+      description: "L'icona italiana per eccellenza.",
       color: "from-teal-500 to-blue-500"
     },
     {
@@ -122,14 +119,50 @@ function HomePage() {
     {
       name: "Vespa Primavera",
       year: "1968-1983",
-      description: "Eleganza e leggerezza. ",
+      description: "Eleganza e leggerezza.",
       color: "from-pink-500 to-rose-500"
     },
     {
       name: "Vespa Rally",
       year: "1968-1979",
-      description: "La Vespa sportiva. Prestazioni e design aggressivo",
+      description: "La Vespa sportiva. Prestazioni e design aggressivo.",
       color: "from-amber-500 to-orange-500"
+    },
+    {
+      name: "Gilera 50",
+      year: "1965-1990",
+      description: "Ciclomotore sportivo italiano con prestazioni eccellenti.",
+      color: "from-red-600 to-pink-600"
+    },
+    {
+      name: "Fantic Caballero",
+      year: "1975-1987",
+      description: "Il ciclomotore fuoristrada più amato dagli italiani.",
+      color: "from-yellow-500 to-orange-600"
+    },
+    {
+      name: "Piaggio Boxer",
+      year: "1993-2002",
+      description: "Ciclomotore moderno con linee aggressive e motore potente.",
+      color: "from-gray-600 to-gray-800"
+    },
+    {
+      name: "Vespa ET3",
+      year: "1976-1983",
+      description: "La Vespa economica e affidabile. Perfetta per la città.",
+      color: "from-cyan-500 to-blue-600"
+    },
+    {
+      name: "Gilera Arcore",
+      year: "1959-1980",
+      description: "Il ciclomotore che ha lanciato Gilera nel mercato popolare.",
+      color: "from-lime-500 to-green-600"
+    },
+    {
+      name: "Fantic Issimo",
+      year: "1969-1985",
+      description: "Ciclomotore dal design minimale e sportivo.",
+      color: "from-violet-500 to-purple-600"
     }
   ];
 
@@ -138,51 +171,47 @@ function HomePage() {
       <SearchBar />
       
       {/* Hero Section */}
-    <section
-  id="home"
-  className="relative min-h-screen flex items-center bg-cover bg-center bg-no-repeat"
-  style={{ backgroundImage: "url('/images/moto-bg.jpg')" }}
->
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/50"></div>
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: `url(${motoBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        {/* Overlay più leggero per meno contrasto */}
+        <div className="absolute inset-0 bg-black/30"></div>
 
-
-
-  {/* Immagine vespa*/}
-  <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
-    style={{ backgroundImage: `url(${motoBg})` }}
-     
-  >
-
-    <div className="text-center text-white">
-      <h1 className="text-5xl md:text-7xl font-bold mb-6">
-        Motoveicoli Storici
-        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
-          Piaggio Gilera Fantic
-        </span>
-      </h1>
-      <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
-        Un viaggio nella storia dei leggendari ciclomotori che hanno fatto la storia del motociclismo in Italia
-      </p>
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="#veicoli"
-          className="px-8 py-4 bg-red-600 text-white rounded-full font-semibold hover:bg-red-700 transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center justify-center"
-        >
-          Scopri i Veicoli
-          <ChevronRight className="ml-2 w-5 h-5" />
-        </a>
-        <Link
-          to="/collaudo"
-          className="px-8 py-4 bg-white text-red-600 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg border-2 border-red-600 inline-flex items-center justify-center"
-        >
-          Prenota Collaudo
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
-
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="text-center text-white">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl">
+              Motoveicoli Storici
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 drop-shadow-lg">
+                Piaggio Gilera Fantic
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-xl">
+              Un viaggio nella storia dei leggendari ciclomotori che hanno fatto la storia del motociclismo in Italia
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="#veicoli"
+                className="px-8 py-4 bg-red-600 text-white rounded-full font-semibold hover:bg-red-700 transition-all duration-300 hover:scale-105 shadow-2xl inline-flex items-center justify-center"
+              >
+                Scopri i Veicoli
+                <ChevronRight className="ml-2 w-5 h-5" />
+              </a>
+              <Link
+                to="/collaudo"
+                className="px-8 py-4 bg-white text-red-600 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 shadow-2xl border-2 border-red-600 inline-flex items-center justify-center"
+              >
+                Prenota Collaudo
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Features Section */}
       <section className="py-20 bg-white">
@@ -267,6 +296,94 @@ function HomePage() {
           <Link to="/collaudo" className="px-8 py-4 bg-white text-red-600 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-xl inline-block">
             Prenota Ora
           </Link>
+        </div>
+      </section>
+
+      {/* Chi Siamo Section */}
+      <section id="storia" className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Chi Siamo
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              La passione per i motoveicoli storici è nel nostro DNA
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-3xl font-bold text-gray-900 mb-6">La Nostra Storia</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Siamo un team di appassionati e professionisti del settore motociclistico con oltre 30 anni di esperienza nella restaurazione e certificazione di veicoli storici italiani.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                La nostra missione è preservare e valorizzare il patrimonio storico dei ciclomotori che hanno fatto la storia della mobilità italiana. Ogni Piaggio, Vespa, Gilera e Fantic racconta una storia unica che merita di essere conservata per le generazioni future.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Offriamo servizi di collaudo certificato, consulenza tecnica e documentazione storica per aiutare i proprietari a mantenere autentici i loro preziosi veicoli.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <div className="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-xl">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-red-600 text-white p-3 rounded-lg">
+                    <Heart className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-2">Passione Autentica</h4>
+                    <p className="text-gray-700 text-sm">
+                      Non siamo solo esperti, siamo collezionisti e appassionati proprio come te.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-blue-600 text-white p-3 rounded-lg">
+                    <CheckCircle className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-2">Certificazioni Ufficiali</h4>
+                    <p className="text-gray-700 text-sm">
+                      Collaudi riconosciuti e documentazione completa per l'immatricolazione storica.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-green-600 text-white p-3 rounded-lg">
+                    <Calendar className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-2">30+ Anni di Esperienza</h4>
+                    <p className="text-gray-700 text-sm">
+                      Conoscenza approfondita di ogni modello e periodo storico.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
+            <div className="p-6">
+              <div className="text-5xl font-bold text-red-600 mb-2">500+</div>
+              <p className="text-gray-700 font-medium">Veicoli Collaudati</p>
+            </div>
+            <div className="p-6">
+              <div className="text-5xl font-bold text-orange-600 mb-2">30+</div>
+              <p className="text-gray-700 font-medium">Anni di Esperienza</p>
+            </div>
+            <div className="p-6">
+              <div className="text-5xl font-bold text-yellow-600 mb-2">100%</div>
+              <p className="text-gray-700 font-medium">Clienti Soddisfatti</p>
+            </div>
+          </div>
         </div>
       </section>
     </>
