@@ -15,14 +15,18 @@ function Navbar() {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
             <Bike className="w-8 h-8 text-red-600" />
-            <span className="text-2xl font-bold text-gray-900">Mezzi Storici</span>
+            <span className="text-2xl font-bold text-gray-900">F.M.C.</span>
           </Link>
           
-          <div className="hidden md:flex space-x-8">
+
+                    
+
+          
+          <div className="sticky top-0 space-x-5">
             <Link to="/" className="text-gray-700 hover:text-red-600 transition-colors font-medium">Home</Link>
             <a href="#veicoli" className="text-gray-700 hover:text-red-600 transition-colors font-medium">Veicoli</a>
             <a href="#storia" className="text-gray-700 hover:text-red-600 transition-colors font-medium">Chi Siamo</a>
-            <Link to="/collaudo" className="px-4 py-2 bg-red-600 text-white rounded-full font-medium hover:bg-red-700 transition-colors">
+            <Link to="/collaudo" className="px-4 py-2 bg-red-600 text-white rounded-full font-medium hover:bg-red0-700 transition-colors">
               Ottieni un Collaudo
             </Link>
           </div>
@@ -104,8 +108,20 @@ function HomePage() {
       description: "Design unico un mix dell'iconico SI e il Ciao.",
       color: "from-purple-500 to-pink-500"
     },
+     {
+      name: "Piaggio Boxer",
+      year: "1993-2002",
+      description: "Ciclomotore moderno con linee aggressive.",
+      color: "from-gray-600 to-gray-800"
+    },
+     {
+      name: "SuperBravo Piaggio",
+      year: "1993-1997",
+      description: "L'unico della linea dedicato all fuoristrada/enduro.",
+      color: "from-red-600 to-gray-800"
+    },
     {
-      name: "Vespa 50",
+      name: "Vespa 50 Special",
       year: "1963-oggi",
       description: "L'icona italiana per eccellenza.",
       color: "from-teal-500 to-blue-500"
@@ -128,35 +144,32 @@ function HomePage() {
       description: "La Vespa sportiva. Prestazioni e design aggressivo.",
       color: "from-amber-500 to-orange-500"
     },
+     {
+      name: "Vespa ET3",
+      year: "1976-1983",
+      description: "La Vespa economica e affidabile. Perfetta per la città.",
+      color: "from-lime-400 to-blue-600"
+    },
     {
-      name: "Gilera 50",
+      name: "Gilera CBA",
       year: "1965-1990",
       description: "Ciclomotore sportivo italiano con prestazioni eccellenti.",
       color: "from-red-600 to-pink-600"
     },
-    {
-      name: "Fantic Caballero",
-      year: "1975-1987",
-      description: "Il ciclomotore fuoristrada più amato dagli italiani.",
-      color: "from-yellow-500 to-orange-600"
-    },
-    {
-      name: "Piaggio Boxer",
-      year: "1993-2002",
-      description: "Ciclomotore moderno con linee aggressive e motore potente.",
-      color: "from-gray-600 to-gray-800"
-    },
-    {
-      name: "Vespa ET3",
-      year: "1976-1983",
-      description: "La Vespa economica e affidabile. Perfetta per la città.",
-      color: "from-cyan-500 to-blue-600"
-    },
+   
+   
+   
     {
       name: "Gilera Arcore",
       year: "1959-1980",
       description: "Il ciclomotore che ha lanciato Gilera nel mercato popolare.",
       color: "from-lime-500 to-green-600"
+    },
+     {
+      name: "Fantic Caballero",
+      year: "1975-1987",
+      description: "Il ciclomotore fuoristrada più amato dagli italiani.",
+      color: "from-yellow-500 to-orange-600"
     },
     {
       name: "Fantic Issimo",
@@ -187,7 +200,7 @@ function HomePage() {
           <div className="text-center text-white">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl">
               Motoveicoli Storici
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400 drop-shadow-lg">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-blue-400 drop-shadow-lg">
                 Piaggio Gilera Fantic
               </span>
             </h1>
@@ -678,7 +691,7 @@ function App() {
         </Routes>
         <Footer />
       </div>
-    </Router>
+    </Router> 
   );
 }
 
